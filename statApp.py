@@ -146,7 +146,7 @@ def new_window_calc():
 
 #törlés funkció
 def button_clear():
-    canvas_levezetes = Canvas(root, width=600, height=250, bg="White")
+    canvas_levezetes = Canvas(root, width=600, height=250, bg="grey50")
     canvas_levezetes.grid(row=8, column=1, columnspan=6)
     levezet = Label(canvas_levezetes, padx=300, pady=150)
     levezet.grid(row=8, column=1)
@@ -171,40 +171,49 @@ def button_induljunk():
     if(math == "iv"):
         megoldás_a = (q1a * p1a) / (q0a * p0a)
         megoldás_b = (q1b * p1b) / (q0b * p0b)
+        megoldás_a_százalék = round((megoldás_a * 100), 1)
+        megoldás_b_százalék = round((megoldás_b * 100), 1)
 
-        levezet = Label(canvas_levezetes, text=f"iv(egyedi értékindex) : A = {megoldás_a} \n B = {megoldás_b}." , padx=300, pady=150, bg="grey60")
+        levezet = Label(canvas_levezetes, text=f"iv(egyedi értékindex) : A = ({q1a} * {p1a}) / ({q0a} * {p0a}) = {megoldás_a} = {megoldás_a_százalék}% \n B = ({q1b} * {p1b}) / ({q0b} * {p0b}) = {megoldás_b} = {megoldás_b_százalék}%." , padx=300, pady=150, bg="grey60")
         levezet.grid(row=8, column=1)
     
     if(math == "ip"):
         megoldás_a = p1a / p0a
         megoldás_b = p1b / p0b
+        megoldás_a_százalék = round((megoldás_a * 100), 1)
+        megoldás_b_százalék = round((megoldás_b * 100), 1)
 
-        levezet = Label(canvas_levezetes, text=f"ip(egyedi árindex) = A: {megoldás_a} \n B: {megoldás_b}." , padx=300, pady=150, bg="grey60")
+        levezet = Label(canvas_levezetes, text=f"ip(egyedi árindex) : A = {p1a} / {p0a} = {megoldás_a} = {megoldás_a_százalék}% \n B = {p1b} / {p0b} = {megoldás_b} = {megoldás_b_százalék}%" , padx=300, pady=150, bg="grey60")
         levezet.grid(row=8, column=1)
 
     if(math == "iq"):
         megoldás_a = q1a / q0a
         megoldás_b = q1b / q0b
+        megoldás_a_százalék = round((megoldás_a * 100), 1)
+        megoldás_b_százalék = round((megoldás_b * 100), 1)
 
-        levezet = Label(canvas_levezetes, text=f"iq(egyedi volumenindex) = A: {megoldás_a} \n B: {megoldás_b}." , padx=300, pady=150, bg="grey60")
+        levezet = Label(canvas_levezetes, text=f"iq(egyedi volumenindex) : A = {q1a} / {q0a} = {megoldás_a} = {megoldás_a_százalék}% \n B = {q1b} / {q0b} = {megoldás_b} = {megoldás_b_százalék}%" , padx=300, pady=150, bg="grey60")
         levezet.grid(row=8, column=1)
     
     if(math == "Iv"):
         megoldás = (q1a * p1a + q1b * p1b) / (q0a * p0a + q0b * p0b)
+        megoldás_a_százalék = round((megoldás * 100), 1)
 
-        levezet = Label(canvas_levezetes, text=f"Iv(együttes értékindex) = {megoldás}" , padx=300, pady=150, bg="grey60")
+        levezet = Label(canvas_levezetes, text=f"Iv(együttes értékindex) = ({q1a} * {p1a} + {q1b} * {p1b}) / ({q0a} * {p0a} + {q0b} * {p0b}) = {megoldás} = {megoldás_a_százalék}%", padx=300, pady=150, bg="grey60")
         levezet.grid(row=8, column=1)
     
     if(math == "Ip"):
         megoldás = (q1a * p1a + q1b * p1b) / (q1a * p0a + q1b * p0b)
+        megoldás_a_százalék = round((megoldás * 100), 1)
 
-        levezet = Label(canvas_levezetes, text=f"Ip(együttes árindex) = {megoldás}" , padx=300, pady=150, bg="grey60")
+        levezet = Label(canvas_levezetes, text=f"Ip(együttes árindex) = ({q1a} * {p1a} + {q1b} * {p1b}) / ({q1a} * {p0a} + {q1b} * {p0b}) = {megoldás} = {megoldás_a_százalék}%" , padx=300, pady=150, bg="grey60")
         levezet.grid(row=8, column=1)
     
     if(math == "Iq"):
         megoldás = (q1a * p0a + q1b * p0b) / (q0a * p0a + q0b * p0b)
+        megoldás_a_százalék = round((megoldás * 100), 1)
 
-        levezet = Label(canvas_levezetes, text=f"Iq(együttes volumenindex) = {megoldás}" , padx=300, pady=150, bg="grey60")
+        levezet = Label(canvas_levezetes, text=f"Iq(együttes volumenindex) = ({q1a} * {p0a} + {q1b} * {p0b}) / ({q0a} * {p0a} + {q0b} * {p0b}) = {megoldás} = {megoldás_a_százalék}%" , padx=300, pady=150, bg="grey60")
         levezet.grid(row=8, column=1)
 
 #rádiógombok globalizálása
