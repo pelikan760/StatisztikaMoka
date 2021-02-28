@@ -1,4 +1,5 @@
 # Statisztika Móka
+![StatMóka](https://github.com/pelikan760/StatisztikaMoka/blob/main/Statisztika%20M%C3%B3ka.png)
 
 ## Table of contents
 * [General info](#general-info)
