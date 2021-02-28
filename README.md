@@ -1,4 +1,4 @@
-# StatisztikaApp
+# Statisztika Móka
 
 ## Table of contents
 * [General info](#general-info)
