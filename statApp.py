@@ -1,14 +1,18 @@
 from tkinter import *
 import os
+from PIL import Image, ImageTk
+# from pdf2image import convert_from_path
 
 global version 
-version = "v0.1.0b"
+version = "v0.1.1b"
+global icon
+logo = "logo.ico"
 
 root = Tk()
 root.wm_title(f"Statisztika Móka {version}")
 menu = Menu(root)
 root.config(menu=menu)
-root.iconbitmap(r"C:\Users\Lenovo\Desktop\Programozás (1)\StatisztikaMóka\logo.ico")
+root.iconbitmap(logo)
 root.config(bg="grey25")
 
 
@@ -16,30 +20,31 @@ root.config(bg="grey25")
 def new_window_about():
     win = Toplevel()
     win.title(f"Index móka {version}")
-    win.iconbitmap(r"C:\Users\Lenovo\Desktop\Programozás (1)\StatisztikaMóka\logo.ico")
+    win.iconbitmap(logo)
     label_appnev = Label(win, text=f"                                         Statisztika Móka {version}").grid(row=0, column=0, columnspan=3)
     #A kurva kép nem akar sehogy sem betöltődni...
-    #load = Image.open("logo.png")
-    #render = ImageTk.PhotoImage(load)
-    #logo = PhotoImage(file="logo.png")
-    #label_logo = Label(win, image=render).grid(row=1, column=1)
+    #label_logo = Label(win).grid(row=1, column=1)
+    #logo = ImageTk.PhotoImage(Image.open("logo.png"))
+    #logo_size = Label(label_logo)
+    #logo_size.configure(image=logo)
+    #logo_size.grid(row=1, column=1)
     label_readme = Label(win, text="Bármilyen kérdés, vagy javaslat esetén vedd fel velem\na kapcsolatot az alábbi emailcímen: pelikanvagyok@gmail.com.", padx=20, pady=10).grid(row=2, column=2, columnspan=3)
     label_license = Label(win, text="AGPL-3.0 license", justify=CENTER).grid(row=3, column=3, columnspan=3)
 
 def new_window_viszonyszámok():
     win = Toplevel()
     win.title(f"Statisztika Móka {version}")
-    win.iconbitmap(r"C:\Users\Lenovo\Desktop\Programozás (1)\StatisztikaMóka\logo.ico")
+    win.iconbitmap(logo)
 
 def new_window_átlagok():
     win = Toplevel()
     win.title(f"Statisztika Móka {version}")
-    win.iconbitmap(r"C:\Users\Lenovo\Desktop\Programozás (1)\StatisztikaMóka\logo.ico")
+    win.iconbitmap(logo)
 
 def new_window_calc():
     win = Toplevel()
     win.title(f"Statisztika Móka {version}")
-    win.iconbitmap(r"C:\Users\Lenovo\Desktop\Programozás (1)\StatisztikaMóka\logo.ico")
+    win.iconbitmap(logo)
     
     e = Entry(win, width=35, borderwidth=5,  bg="gray60")
     e.grid(row=0, column=0, columnspan=3, pady=10, padx=10)
@@ -144,9 +149,14 @@ def new_window_calc():
     button_subtract.grid(row=4, column=1)
     button_divide.grid(row=4, column=2)
 
+def new_window_képlet():
+    win = Toplevel()
+    win.title(f"Index móka {version}")
+    win.iconbitmap(logo)
+
 #törlés funkció
 def button_clear():
-    canvas_levezetes = Canvas(root, width=600, height=250, bg="grey50")
+    canvas_levezetes = Canvas(root, width=600, height=250, bg="grey60")
     canvas_levezetes.grid(row=8, column=1, columnspan=6)
     levezet = Label(canvas_levezetes, padx=300, pady=150)
     levezet.grid(row=8, column=1)
@@ -252,7 +262,7 @@ funkcio_menu.add_command(label="Számológép", command=new_window_calc)
 beallitasok_menu = Menu(menu)
 menu.add_cascade(label="Beállítások", menu=beallitasok_menu)
 beallitasok_menu.add_command(label="Beállítások", state=DISABLED)
-beallitasok_menu.add_command(label="Wiki", state=DISABLED) 
+beallitasok_menu.add_command(label="Képletgyűjtemény", command=new_window_képlet) 
 beallitasok_menu.add_command(label="About", command=new_window_about)
 
 #checkboxok
@@ -326,5 +336,6 @@ button_clear.grid(row=7, column=5)
 
 canvas_levezetes = Canvas(root, width=600, height=250, bg="gray60")
 canvas_levezetes.grid(row=8, column=1, columnspan=6)
+
 
 root.mainloop()
