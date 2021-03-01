@@ -2,9 +2,10 @@ from tkinter import *
 import os
 from PIL import Image, ImageTk
 # from pdf2image import convert_from_path
+from pdfk import new_window_képlet
 
 global version 
-version = "v0.1.1b"
+version = "v0.1.2b"
 global icon
 logo = "logo.ico"
 
@@ -42,11 +43,11 @@ def new_window_átlagok():
     win.iconbitmap(logo)
 
 def new_window_calc():
-    win = Toplevel()
-    win.title(f"Statisztika Móka {version}")
-    win.iconbitmap(logo)
+    win1 = Toplevel()
+    win1.title(f"Statisztika Móka {version}")
+    win1.iconbitmap(logo)
     
-    e = Entry(win, width=35, borderwidth=5,  bg="gray60")
+    e = Entry(win1, width=35, borderwidth=5,  bg="gray60")
     e.grid(row=0, column=0, columnspan=3, pady=10, padx=10)
 
     #main functions
@@ -108,24 +109,24 @@ def new_window_calc():
         e.delete(0, END)
 
     #define the buttons
-    button_1 = Button(win, text="1", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(1))
-    button_2 = Button(win, text="2", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(2))
-    button_3 = Button(win, text="3", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(3))
-    button_4 = Button(win, text="4", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(4))
-    button_5 = Button(win, text="5", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(5))
-    button_6 = Button(win, text="6", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(6))
-    button_7 = Button(win, text="7", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(7))
-    button_8 = Button(win, text="8", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(8))
-    button_9 = Button(win, text="9", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(9))
-    button_0 = Button(win, text="0", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(0))
+    button_1 = Button(win1, text="1", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(1))
+    button_2 = Button(win1, text="2", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(2))
+    button_3 = Button(win1, text="3", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(3))
+    button_4 = Button(win1, text="4", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(4))
+    button_5 = Button(win1, text="5", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(5))
+    button_6 = Button(win1, text="6", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(6))
+    button_7 = Button(win1, text="7", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(7))
+    button_8 = Button(win1, text="8", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(8))
+    button_9 = Button(win1, text="9", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(9))
+    button_0 = Button(win1, text="0", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=lambda: button_click(0))
 
-    button_multy = Button(win, text="*", padx=41, pady=20, bg="gray60", fg="DarkOrange4", command=button_multiply)
-    button_clear = Button(win, text=" clear", padx=77, pady=20, bg="gray60", fg="DarkOrange4", command=button_clear)
-    button_equal = Button(win, text="=", padx=87, pady=20, bg="gray60", fg="DarkOrange4", command=button_equal)
+    button_multy = Button(win1, text="*", padx=41, pady=20, bg="gray60", fg="DarkOrange4", command=button_multiply)
+    button_clear = Button(win1, text=" clear", padx=77, pady=20, bg="gray60", fg="DarkOrange4", command=button_clear)
+    button_equal = Button(win1, text="=", padx=87, pady=20, bg="gray60", fg="DarkOrange4", command=button_equal)
 
-    button_subtract = Button(win, text="-", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=button_subtract)
-    button_add = Button(win, text="+", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=button_add)
-    button_divide = Button(win, text=" /", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=button_divide)
+    button_subtract = Button(win1, text="-", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=button_subtract)
+    button_add = Button(win1, text="+", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=button_add)
+    button_divide = Button(win1, text=" /", padx=40, pady=20, bg="gray60", fg="DarkOrange4", command=button_divide)
 
     #place the buttons
     button_1.grid(row=3, column=0)
@@ -149,10 +150,8 @@ def new_window_calc():
     button_subtract.grid(row=4, column=1)
     button_divide.grid(row=4, column=2)
 
-def new_window_képlet():
-    win = Toplevel()
-    win.title(f"Index móka {version}")
-    win.iconbitmap(logo)
+def new_window_kép():
+    new_window_képlet()
 
 #törlés funkció
 def button_clear():
@@ -262,7 +261,7 @@ funkcio_menu.add_command(label="Számológép", command=new_window_calc)
 beallitasok_menu = Menu(menu)
 menu.add_cascade(label="Beállítások", menu=beallitasok_menu)
 beallitasok_menu.add_command(label="Beállítások", state=DISABLED)
-beallitasok_menu.add_command(label="Képletgyűjtemény", command=new_window_képlet) 
+beallitasok_menu.add_command(label="Képletgyűjtemény", command=new_window_kép) 
 beallitasok_menu.add_command(label="About", command=new_window_about)
 
 #checkboxok
