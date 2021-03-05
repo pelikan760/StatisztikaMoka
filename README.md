@@ -21,5 +21,5 @@ Unzip the folder and just run 1statApp.exe
 
 ## To-do
 * Viszonyszámok
-* Középértékek
+* Középértékek (done)
 * Beállítások
