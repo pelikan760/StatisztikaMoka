@@ -3,7 +3,7 @@ from PIL import Image,ImageTk
 
 def new_window_képlet():
     global version 
-    version = "v0.1.2b"
+    version = "v0.2.0"
     global icon
     logo = "logo.ico"
     root1 = Toplevel()

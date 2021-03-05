@@ -3,9 +3,10 @@ import os
 from PIL import Image, ImageTk
 # from pdf2image import convert_from_path
 from pdfk import new_window_képlet
+from átlagok import main
 
 global version 
-version = "v0.1.2b"
+version = "v0.2.0"
 global icon
 logo = "logo.ico"
 
@@ -32,15 +33,8 @@ def new_window_about():
     label_readme = Label(win, text="Bármilyen kérdés, vagy javaslat esetén vedd fel velem\na kapcsolatot az alábbi emailcímen: pelikanvagyok@gmail.com.", padx=20, pady=10).grid(row=2, column=2, columnspan=3)
     label_license = Label(win, text="AGPL-3.0 license", justify=CENTER).grid(row=3, column=3, columnspan=3)
 
-def new_window_viszonyszámok():
-    win = Toplevel()
-    win.title(f"Statisztika Móka {version}")
-    win.iconbitmap(logo)
-
 def new_window_átlagok():
-    win = Toplevel()
-    win.title(f"Statisztika Móka {version}")
-    win.iconbitmap(logo)
+    main()
 
 def new_window_calc():
     win1 = Toplevel()
@@ -74,7 +68,7 @@ def new_window_calc():
             e.insert(0, f_num - int(second_number))
     
         if(math == "div"):
-                e.insert(0, f_num / int(second_number))
+            e.insert(0, f_num / int(second_number))
 
     def button_multiply():
         first_num = e.get()
@@ -254,8 +248,7 @@ def radio_Iq():
 funkcio_menu = Menu(menu)
 menu.add_cascade(label="Funkciók", menu=funkcio_menu)
 funkcio_menu.add_command(label="Indexek")
-funkcio_menu.add_command(label="Viszonyszámok", command=new_window_viszonyszámok, state=DISABLED)
-funkcio_menu.add_command(label="Középértékek, átlagok", command=new_window_átlagok, state=DISABLED)
+funkcio_menu.add_command(label="Középértékek, átlagok", command=new_window_átlagok)
 funkcio_menu.add_command(label="Számológép", command=new_window_calc)
 
 beallitasok_menu = Menu(menu)
