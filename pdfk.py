@@ -4,7 +4,7 @@ from PIL import Image,ImageTk
 def new_window_képlet():
     global version 
     version = "v0.2.0"
-    global icon
+    global logo
     logo = "logo.ico"
     root1 = Toplevel()
     root1.wm_title(f"Statisztika Móka {version}")

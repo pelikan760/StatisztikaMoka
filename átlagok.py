@@ -1,11 +1,11 @@
 from tkinter import *
 from tkinter import ttk
 
-def main():
+def átl():
     root = Tk()
     global version 
     version = "v0.2.0"
-    global icon
+    global logo
     logo = "logo.ico"
     
     root.geometry("770x400")
