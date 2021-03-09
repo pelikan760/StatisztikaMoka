@@ -16,8 +16,9 @@ Project is created with:
 * Tkinter
 	
 ## Setup
-To run this project, just download the latest release, or use git:
-Unzip the folder and just run 1statApp.exe
+Clickelj a Releases fülre jobb oldalt. Töltsd le a legfrissebb StatisztikaMóka.zip-et.
+Nyisd ki valamilyen programmal.
+Indítsd el a StatsisztikaMóka.exe-t
 
 ## To-do
 * Viszonyszámok
