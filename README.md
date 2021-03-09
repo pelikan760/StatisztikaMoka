@@ -16,9 +16,9 @@ Project is created with:
 * Tkinter
 	
 ## Setup
-Clickelj a Releases fülre jobb oldalt. Töltsd le a legfrissebb StatisztikaMóka.zip-et.
-Nyisd ki valamilyen programmal.
-Indítsd el a StatsisztikaMóka.exe-t
+* Clickelj a Releases fülre jobb oldalt. Töltsd le a legfrissebb StatisztikaMóka.zip-et.
+* Nyisd ki valamilyen programmal.
+* Indítsd el a StatsisztikaMóka.exe-t
 
 ## To-do
 * Viszonyszámok
